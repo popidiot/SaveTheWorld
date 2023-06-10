@@ -7,11 +7,13 @@ public class QuestEvent : MonoBehaviour
 {
     public bool Quest1;
     public bool Quest2;
+    public bool Quest3;
     public GameObject Text1;
     public GameObject Text2;
+    public GameObject Text3;
     public bool end_Quest1;
     DialogeNextClick DialogClick;
-    public 
+    public GameObject quests;
     void Start()
     {
         Quest1 = false;
@@ -44,7 +46,34 @@ public class QuestEvent : MonoBehaviour
         {
             Text2.SetActive(false);
         }
+    
 
-
+        if (Quest3 == true)
+        {
+            Text3.SetActive(true);
+        }
+        else
+        {
+            Text3.SetActive(false);
+        }
+        if (Quest3 == true) 
+        {
+            quests.SetActive(false);
+        }
+        /*
+        if (Quest2 == true) 
+        { 
+                if (Quest1 == true)
+                {
+                if(GameObject.FindGameObjectWithTag("Igor").GetComponent<NPC_Task>().last == true) 
+                { 
+                
+                Quest3 = true;
+                Quest2 = false;
+                Quest1 = false;
+               
+                }
+            }
+        }*/
     }
 }

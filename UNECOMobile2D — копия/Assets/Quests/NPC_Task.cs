@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,14 @@ public class NPC_Task : MonoBehaviour
     private bool OnHide;
     private DialogeNextClick End;
     public GameObject Dialog3;
-  
+    public GameObject Dialog4;
+    public GameObject Last;
+
 
     // Update is called once per frame
     void Update()
     {
-       
+
         if (EndDialog == true)
         {
             Time.timeScale = 1;
@@ -25,7 +28,7 @@ public class NPC_Task : MonoBehaviour
             Dialog1.SetActive(false);
 
         }
-     
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,37 +41,48 @@ public class NPC_Task : MonoBehaviour
             {
                 Dialog2.SetActive(true);
             }
-            if  (GameObject.FindGameObjectWithTag("Dialog_1fin").GetComponent<DialogeNextClick>().finDialog == false)
+            if (GameObject.FindGameObjectWithTag("Dialog_1fin").GetComponent<DialogeNextClick>().finDialog == false)
             {
-                
+
                 Dialog3.SetActive(true);
                 Debug.Log("dsad");
             }
+            if (EventProgressTrash.trashProgress == 3)
+            {
+                Dialog4.SetActive(true);
+                GameObject.FindGameObjectWithTag("Quest").GetComponent<QuestEvent>().Quest3 = true;
+                GameObject.FindGameObjectWithTag("Quest").GetComponent<QuestEvent>().Quest2 = false;
+            }
+            if (EventProgressTree.TreeProgress == 3)
+            {
+                Last.SetActive(true);
+              
+            }
         }
     }
-            /* 
-             if (FinDialog == false)
-            {
-                Time.timeScale = 0;
-                if (QuestEvent.end_Quest1 == false)
-                {
-                    Dialog1.SetActive(true);
-                }
-                else
-                {
-                    Dialog2.SetActive(true);
-                }
-            }
-           else
-            {
-                if (OnHide == false) 
-                { 
-                Dialog2.SetActive(true) ;
-                    OnHide = true;
-                }
-            }
-            */
+    /* 
+     if (FinDialog == false)
+    {
+        Time.timeScale = 0;
+        if (QuestEvent.end_Quest1 == false)
+        {
+            Dialog1.SetActive(true);
+        }
+        else
+        {
+            Dialog2.SetActive(true);
+        }
+    }
+   else
+    {
+        if (OnHide == false) 
+        { 
+        Dialog2.SetActive(true) ;
+            OnHide = true;
+        }
+    }
+    */
 
-        
-    
+
+
 }

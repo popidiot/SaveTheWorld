@@ -11,14 +11,14 @@ public class EventProgress : MonoBehaviour
     public static int trashProgress;
     void Start()
     {
-        
+        Progress = 0;
     }
 
     // Update is called once per frame
     private void Update()
     {
         EventText.text = "Озёр очищено: " + Progress;
-        EventText2.text = "Полян убрано: " + trashProgress;
+      
 
     }
 }

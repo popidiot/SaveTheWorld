@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EventTrash : MonoBehaviour
 {
+   
      void Start()
     {
         stop = true;
@@ -17,7 +18,7 @@ public class EventTrash : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Quest").GetComponent<QuestEvent>().Quest2 == true)
         {
             Animation collect = GetComponent<Animation>();
-            if (collect.Play("collect"))
+            if (collect.Play("Collect"))
             {
                 Debug.Log("Onm");
 
@@ -26,7 +27,7 @@ public class EventTrash : MonoBehaviour
                 eventTrash.enabled = false;
                 if (stop == true)
                 {
-                    EventProgress.trashProgress++;
+                    EventProgressTrash.trashProgress++;
                 }
 
                 stop = false;

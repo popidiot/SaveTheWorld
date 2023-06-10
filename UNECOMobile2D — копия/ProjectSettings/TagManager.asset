@@ -8,6 +8,8 @@ TagManager:
   - Dialog1
   - Quest
   - Dialog_1fin
+  - Igor
+  - SkinUI
   layers:
   - Default
   - TransparentFX
